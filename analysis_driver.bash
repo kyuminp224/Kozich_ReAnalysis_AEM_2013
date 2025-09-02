@@ -37,3 +37,6 @@ code/mothur/mothur code/get_error.batch
 
 # Run processed dara through clustering and making a shared file
 code/mothur/mothur code/get_shared_otus.batch
+
+#Generate data to plot NMDS ordination
+code/mothur/mothur code/get_nmds_data.batch
