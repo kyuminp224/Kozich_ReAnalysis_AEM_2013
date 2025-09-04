@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Obtained the Linux version of mothur (v1.39.5) from the mothur GitHub repository
 
+# Obtained the Linux version of mothur (v1.39.5) from the mothur GitHub repository
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
 unzip Mothur.linux_64.zip
 mv mothur code/
@@ -11,7 +11,6 @@ rm -rf __MACOSX
 # Obtained the raw `fastq.gz` files from https://www.mothur.org/MiSeqDevelopmentData.html
 # * Downloaded https://mothur.s3.us-east-2.amazonaws.com/data/MiSeqDevelopmentData/StabilityWMetaG.tar
 # * Ran the following from the project's root directory
-
 wget --no-check-certificate https://mothur.s3.us-east-2.amazonaws.com/data/MiSeqDevelopmentData/StabilityWMetaG.tar
 tar xvf StabilityWMetaG.tar -C data/raw/
 rm StabilityWMetaG.tar
@@ -20,8 +19,7 @@ rm StabilityWMetaG.tar
 
 wget https://mothur.s3.us-east-2.amazonaws.com/wiki/silva.seed_v123.tgz
 tar xvzf silva.seed_v123.tgz silva.seed_v123.align silva.seed_v123.tax
-code/mothur/mothur "#get.lineage(fasta=silva.seed_v123.align, taxonomy=silva.seed_v1
-23.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v123.pick.align, processors=8)"
+code/mothur/mothur "#get.lineage(fasta=silva.seed_v123.align, taxonomy=silva.seed_v123.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v123.pick.align, processors=8)"
 mv silva.seed_v123.pick.align data/references/silva.seed.align
 rm silva.seed_v123.tgz silva.seed_v123.*
 rm mothur.*.logfile
@@ -53,4 +51,5 @@ code/mothur/mothur code/get_nmds_data.batch
 code/mothur/mothur code/get_sobs_data.batch
 
 # Construct NMDS png file
-R -e "source('code/plot_nmds.R'): plot_nmds('')"
+R -e "source('code/plot_nmds.R'); plot_nmds('data/mothur/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.thetayc.0.03.lt.ave.nmds.axes')"
+
