@@ -87,6 +87,7 @@ Insert figure legends with the first sentence in bold, for example:
 **Figure 1. Number of OTUs sampled among bacterial and archaeal 16S rRNA gene sequences for different OTU definitions and level of sequencing effort.** Rarefaction curves for different OTU definitions of Bacteria (A) and Archaea (B). Rarefaction curves for the coarse environments in Table 1 for Bacteria (C) and Archaea (D).
 
 
+
 \newpage
 
 ## References
